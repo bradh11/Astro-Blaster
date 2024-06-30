@@ -52,7 +52,7 @@ if (rematerializing) {
     }
 } else {
     // Apply forward thrust (thrust from the bottom of the rocket)
-    if (keyboard_check(vk_up)) {
+    if (keyboard_check(vk_up) || keyboard_check(ord("W")) ) {
         var thrust = 0.05;
         var thrust_x = lengthdir_x(thrust, image_angle);
         var thrust_y = lengthdir_y(thrust, image_angle);
@@ -67,7 +67,7 @@ if (rematerializing) {
     }
 
     // Apply reverse thrust (without creating flame)
-    if (keyboard_check(vk_down)) {
+    if (keyboard_check(vk_down) || keyboard_check(ord("S")) ) {
         var reverse_thrust = 0.05;
         var reverse_x = lengthdir_x(reverse_thrust, image_angle + 180); // Thrust in the opposite direction
         var reverse_y = lengthdir_y(reverse_thrust, image_angle + 180);
@@ -76,12 +76,12 @@ if (rematerializing) {
     }
 
     // Rotate right
-    if (keyboard_check(vk_right)) {
+    if (keyboard_check(vk_right) || keyboard_check(ord("D")) ) {
         image_angle -= 5; // Rotate right
     }
 
     // Rotate left
-    if (keyboard_check(vk_left)) {
+    if (keyboard_check(vk_left) || keyboard_check(ord("A")) ) {
         image_angle += 5; // Rotate left
     }
 
