@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_intro_astro",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":5.877583,
+  "name":"snd_intro_astro",
+  "parent":{
+    "name":"Title Screen",
+    "path":"folders/Rooms/Title Screen.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_intro_astro.mp3",
+  "type":0,
+  "volume":1.0,
+}
