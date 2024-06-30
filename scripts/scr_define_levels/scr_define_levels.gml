@@ -8,6 +8,16 @@ function scr_define_levels() {
     // Do not redefine the room variables; instead, just reference them directly
 
     // Define level structures
+	var level0 = {
+        room: rm_title, // Reference the room directly
+        enemies: [
+            {type: obj_enemy1, count: 0, hp: 10},
+            {type: obj_enemy2, count: 0, hp: 15}
+        ],
+        powerups: []
+    };
+	
+	
     var level1 = {
         room: rm_level1, // Reference the room directly
         enemies: [
@@ -27,7 +37,7 @@ function scr_define_levels() {
     };
 
     // Add more levels as needed
-    global.levels = [level1, level2];
+    global.levels = [level0, level1, level2];
 
     global.current_level = 0;
     global.score = 0; // Initialize score

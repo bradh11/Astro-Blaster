@@ -1,18 +1,16 @@
 function scr_init_level() {
     show_debug_message("Initializing level: " + string(global.current_level));
-
     var level_index = global.current_level;
-
+    
     // Reset lives
     global.lives = 3;
-
+    
     // Reset weapons to defaults
-    global.weapon_database = {};
-    global.weapon_database[global.WEAPON_TYPE.DEFAULT] = global.weapon_settings[global.WEAPON_TYPE.DEFAULT];
-
+    reset_weapon_inventory();
+    
     // Get the level configuration
     var level_config = global.levels[level_index];
-
+    
     // Ensure "Enemies" and "PowerUps" layers exist
     if (!layer_exists("Enemies")) {
         layer_create(-100, "Enemies");
@@ -20,7 +18,7 @@ function scr_init_level() {
     if (!layer_exists("PowerUps")) {
         layer_create(-101, "PowerUps");
     }
-
+    
     // Spawn enemies
     for (var i = 0; i < array_length(level_config.enemies); i++) {
         var enemy_config = level_config.enemies[i];
@@ -29,7 +27,7 @@ function scr_init_level() {
             enemy.hp = enemy_config.hp;
         }
     }
-
+    
     // Spawn power-ups
     for (var i = 0; i < array_length(level_config.powerups); i++) {
         var powerup_type = level_config.powerups[i];
@@ -44,4 +42,17 @@ function scr_init_level() {
             // Add more cases for other power-ups
         }
     }
+    
+    // If the player object exists, update its weapon
+    if (instance_exists(obj_rocket)) {
+        with (obj_rocket) {
+            current_weapon_type = weapon_inventory[0];
+            if (instance_exists(weapon)) {
+                weapon.type = current_weapon_type;
+                weapon.sprite_index = current_weapon_type.weapon_sprite;
+            }
+        }
+    }
+    
+    show_debug_message("Level initialized successfully.");
 }

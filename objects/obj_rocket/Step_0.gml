@@ -4,13 +4,6 @@
 var thrust_offset = 32; // Distance from the center to the bottom of the rocket
 var bullet_offset = 32; // Distance from the center to the top of the rocket
 
-#region // Weapon Selector
-
-if (keyboard_check_pressed(vk_shift)) {
-    global.current_weapon_type = cycle_weapon_type();
-}
-
-#endregion
 
 #region // Weapon Controls
 
@@ -20,10 +13,26 @@ weapon.x = pos.x;
 weapon.y = pos.y;
 weapon.image_angle = image_angle;
 
+if (keyboard_check_pressed(vk_shift)) {
+    var old_weapon = current_weapon_type;
+    do {
+        current_weapon_index = (current_weapon_index + 1) % array_length(weapon_inventory);
+        current_weapon_type = weapon_inventory[current_weapon_index];
+    } until (current_weapon_type != old_weapon || current_weapon_index == 0);
+    
+    weapon.type = current_weapon_type;
+    weapon.sprite_index = current_weapon_type.weapon_sprite;
+    
+    audio_play_sound(snd_weapon_switch, 5, false);
+    
+    show_debug_message("Switched to: " + current_weapon_type.name);
+}
+
 // Shoot bullets using the current weapon's fire function
 if (keyboard_check_pressed(vk_space)) {
-    var fire_function = global.weapon_database[global.current_weapon_type].fire_function; // Corrected access
-    script_execute(fire_function);
+    with (weapon) {
+        event_perform(ev_other, ev_user0); // Trigger Fire event
+    }
 }
 
 #endregion

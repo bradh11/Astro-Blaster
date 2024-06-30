@@ -9,11 +9,17 @@ start_y = y;
 
 #region // Initial weapon selection
 
-    // Create the weapon instance
-    weapon = instance_create_depth(x, y, 0, obj_weapon);
-    weapon.sprite_index = global.weapon_database[global.WEAPON_TYPE.DEFAULT].weapon_sprite;
-    weapon.type = global.current_weapon_type;
-    
+	// Weapon system variables
+	weapon_inventory = array_create(0);
+	array_copy(weapon_inventory, 0, global.default_weapon_inventory, 0, array_length(global.default_weapon_inventory));
+	current_weapon_index = 0;
+	current_weapon_type = weapon_inventory[current_weapon_index];
+
+	// Create the weapon instance
+	weapon = instance_create_depth(x, y, depth - 1, obj_weapon);
+	weapon.type = current_weapon_type;
+	weapon.sprite_index = current_weapon_type.weapon_sprite;
+
 #endregion
 
 #region // Rematerialize after being destroyed
