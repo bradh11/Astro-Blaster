@@ -35,9 +35,18 @@ function scr_define_levels() {
         ],
         powerups: [global.WEAPON_TYPE.LASER]
     };
+	
+    var level3 = {
+        room: rm_level3, // Reference the room directly
+        enemies: [
+            {type: obj_enemy1, count: 15, hp: 30},
+            {type: obj_enemy2, count: 10, hp: 35}
+        ],
+        powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN]
+    };
 
     // Add more levels as needed
-    global.levels = [level0, level1, level2];
+    global.levels = [level0, level1, level2, level3];
 
     global.current_level = 0;
     global.score = 0; // Initialize score

@@ -22,8 +22,8 @@
   ],
   "name":"rm_victory",
   "parent":{
-    "name":"Level3",
-    "path":"folders/Rooms/Level3.yy",
+    "name":"Victory",
+    "path":"folders/Rooms/Victory.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

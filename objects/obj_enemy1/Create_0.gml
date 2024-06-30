@@ -13,6 +13,3 @@ var min_rotation_speed = 0.1;
 var max_rotation_speed = 1;
 rotation_speed = irandom_range(min_rotation_speed, max_rotation_speed);
 
-// Initialize health
-hp = 50;
-max_hp = hp; // Set max_hp to the initial health value

@@ -25,6 +25,7 @@ function scr_init_level() {
         for (var j = 0; j < enemy_config.count; j++) {
             var enemy = instance_create_layer(random(room_width), random(room_height), "Enemies", enemy_config.type);
             enemy.hp = enemy_config.hp;
+			enemy.max_hp = enemy_config.hp;
         }
     }
     
