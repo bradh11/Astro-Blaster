@@ -50,25 +50,29 @@ if (instance_exists(obj_rocket)) {
         var weapon_sprite = current_weapon_type.weapon_sprite;
         
         // Draw the weapon sprite
-        var sprite_x = weapon_x + 5;
+        var sprite_x = weapon_x + 10;
         var sprite_y = weapon_y + weapon_height / 2;
         if (sprite_exists(weapon_sprite)) {
-            var scale = min(1.5, (weapon_height - 4) / sprite_get_height(weapon_sprite));
-            draw_sprite_ext(weapon_sprite, 0, sprite_x, sprite_y, scale, scale, 0, c_white, 1);
+            var spr_width = sprite_get_width(weapon_sprite);
+            var spr_height = sprite_get_height(weapon_sprite);
             
-            // Debug: Print sprite info
-            show_debug_message("Drawing weapon sprite: " + sprite_get_name(weapon_sprite) + 
-                               " at (" + string(sprite_x) + ", " + string(sprite_y) + 
-                               ") with scale " + string(scale));
+            // Increase scale to make the sprite larger
+            var scale = min(1, weapon_height / spr_height);
+            
+            // Center the sprite both horizontally and vertically
+            var draw_x = sprite_x;
+            var draw_y = sprite_y - (spr_height * scale) / 2;
+            
+            // Draw the sprite
+            draw_sprite_ext(weapon_sprite, 0, draw_x, draw_y, scale, scale, 0, c_white, 1);
         } else {
-            show_debug_message("Weapon sprite does not exist for " + weapon_name);
             draw_text(sprite_x, sprite_y, "No Sprite");
         }
         
         // Draw the weapon name
         draw_set_color(c_white);
         draw_set_valign(fa_middle);
-        draw_text(sprite_x + 40, sprite_y, string_upper(weapon_name));
+        draw_text(weapon_x + weapon_width - 10 - string_width(string_upper(weapon_name)), sprite_y, string_upper(weapon_name));
         draw_set_valign(fa_top);  // Reset vertical alignment
     } else {
         // Draw unknown weapon text if weapon data is not found
