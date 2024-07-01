@@ -3,7 +3,7 @@
 draw_set_font(fnt_hud);
 
 // Set alpha for semi-transparency
-var hud_alpha = 0.5;  // Increased transparency
+var hud_alpha = 0.2;  // Increased transparency
 
 // Define common HUD dimensions
 var hud_height = 32;
@@ -53,8 +53,10 @@ if (instance_exists(obj_rocket)) {
     var name_width = string_width(string_upper(weapon_name));
     
     // Calculate weapon info rectangle dimensions
-    var weapon_width = weapon_sprite_width + name_width + 30; // 10px padding on each side, 10px between sprite and name
-    var weapon_x = display_get_gui_width() / 2 - weapon_width / 2; // Center the weapon info
+    var weapon_width = weapon_sprite_width + name_width + 20; // Reduced padding to bring sprite and name closer
+    var center_x = display_get_gui_width() / 2;
+    var shift_left = 80; // Adjust this value to shift more or less to the left
+    var weapon_x = center_x - weapon_width / 2 - shift_left;
     
     // Background for the weapon info
     draw_set_color(c_black);
@@ -67,23 +69,14 @@ if (instance_exists(obj_rocket)) {
     draw_set_alpha(1);  // Full opacity for sprite
     draw_sprite_ext(weapon_sprite, 0, sprite_x, sprite_y, weapon_scale, weapon_scale, 0, c_white, 1);
     
-    // Debug: Draw a colored rectangle where the sprite should be
-    draw_set_alpha(0.5);  // Semi-transparent for debug rectangle
-    draw_rectangle_color(sprite_x - weapon_sprite_width/2, sprite_y - weapon_sprite_height/2, 
-                         sprite_x + weapon_sprite_width/2, sprite_y + weapon_sprite_height/2, 
-                         c_red, c_red, c_red, c_red, true);
-    
     // Draw the weapon name
     draw_set_color(c_white);
     draw_set_alpha(1);  // Full opacity for text
     draw_set_valign(fa_middle);
-    var text_x = sprite_x + weapon_sprite_width/2 + 10;
+    var text_x = sprite_x + weapon_sprite_width / 2 - 35; // Reduced padding to bring sprite and name closer
     var text_y = hud_y + hud_height / 2;
     draw_text(text_x, text_y, string_upper(weapon_name));
     draw_set_valign(fa_top); // Reset vertical alignment
-    
-    // Debug: Print weapon sprite info
-    show_debug_message("Weapon Sprite: " + string(weapon_sprite) + ", Width: " + string(weapon_sprite_width) + ", Height: " + string(weapon_sprite_height));
 }
 
 // Reset draw settings
