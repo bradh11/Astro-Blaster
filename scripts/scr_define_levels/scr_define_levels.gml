@@ -17,12 +17,11 @@ function scr_define_levels() {
         powerups: []
     };
 	
-	
     var level1 = {
         room: rm_level1, // Reference the room directly
         enemies: [
-            {type: obj_enemy1, count: 5, hp: 10},
-            {type: obj_enemy2, count: 3, hp: 15}
+            {type: obj_enemy1, count: 2, hp: 10},
+            {type: obj_enemy2, count: 0, hp: 15}
         ],
         powerups: [global.WEAPON_TYPE.SHOTGUN]
     };
@@ -30,8 +29,8 @@ function scr_define_levels() {
     var level2 = {
         room: rm_level2, // Reference the room directly
         enemies: [
-            {type: obj_enemy1, count: 10, hp: 20},
-            {type: obj_enemy2, count: 5, hp: 25}
+            {type: obj_enemy1, count: 5, hp: 20},
+            {type: obj_enemy2, count: 1, hp: 25}
         ],
         powerups: [global.WEAPON_TYPE.LASER]
     };
@@ -39,24 +38,51 @@ function scr_define_levels() {
     var level3 = {
         room: rm_level3, // Reference the room directly
         enemies: [
-            {type: obj_enemy1, count: 15, hp: 30},
-            {type: obj_enemy2, count: 10, hp: 35}
+            {type: obj_enemy1, count: 8, hp: 30},
+            {type: obj_enemy2, count: 1, hp: 35}
         ],
         powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN]
     };
 	
-	    var level4 = {
+	var level4 = {
         room: rm_level4, // Reference the room directly
         enemies: [
-            {type: obj_enemy1, count: 15, hp: 30},
-            {type: obj_enemy2, count: 10, hp: 35}
+            {type: obj_enemy1, count: 10, hp: 30},
+            {type: obj_enemy2, count: 2, hp: 35}
         ],
         powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN]
     };
-	
 
+	var level5 = {
+        room: rm_level5, // Reference the room directly
+        enemies: [
+            {type: obj_enemy1, count: 12, hp: 30},
+            {type: obj_enemy2, count: 2, hp: 35}
+        ],
+        powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN]
+    };
+
+	var level6 = {
+        room: rm_level6, // Reference the room directly
+        enemies: [
+            {type: obj_enemy1, count: 15, hp: 30},
+            {type: obj_enemy2, count: 3, hp: 35}
+        ],
+        powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN]
+    };
+
+
+	//Victory Level (should be last)
+	var levelvictory = {
+        room: rm_victory, // Reference the room directly
+        enemies: [
+            {type: obj_enemy1, count: 0, hp: 30},
+            {type: obj_enemy2, count: 0, hp: 35}
+        ],
+        powerups: []
+    };		
     // Add more levels as needed
-    global.levels = [level0, level1, level2, level3, level4];
+    global.levels = [level0, level1, level2, level3, level4, level5, level6, levelvictory];
 
     global.current_level = 0;
     global.score = 0; // Initialize score
