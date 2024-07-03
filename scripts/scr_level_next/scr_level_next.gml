@@ -5,10 +5,13 @@ function scr_next_level() {
         global.current_level = 0;
         show_debug_message("Warning: global.current_level was not initialized. Setting to 0.");
     }
+	show_debug_message("Transitioning from: " + string(global.current_level));
 
     // Increment the current level
     global.current_level++;
-    show_debug_message("Incrementing level to: " + string(global.current_level));
+	target_level = global.current_level;
+	
+    show_debug_message("Incrementing level to: " + string(target_level));
 
     // Check if there are more levels
     if (global.current_level < array_length(global.levels)) {
@@ -22,7 +25,10 @@ function scr_next_level() {
         // Go to the next level's room
         if (room_exists(next_level_config.room)) {
             show_debug_message("Transitioning to room: " + string(next_level_config.room));
-            room_goto(next_level_config.room);
+            
+			TransitionStart(target_level, seq_fade_out, seq_fade_in);
+			
+			
         } else {
             show_debug_message("Error: The room does not exist.");
         }

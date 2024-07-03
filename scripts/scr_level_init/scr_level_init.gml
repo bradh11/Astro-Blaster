@@ -13,15 +13,18 @@ function scr_init_level() {
     
     // Ensure "Enemies" and "PowerUps" layers exist
     if (!layer_exists("Enemies")) {
+		show_debug_message("Creating Enemy layer")
         layer_create(-100, "Enemies");
     }
     if (!layer_exists("PowerUps")) {
+		show_debug_message("Creating Powerup layer")
         layer_create(-101, "PowerUps");
     }
     
     // Spawn enemies
     for (var i = 0; i < array_length(level_config.enemies); i++) {
         var enemy_config = level_config.enemies[i];
+		show_debug_message("Spawning Enemies: " + string(enemy_config.count))
         for (var j = 0; j < enemy_config.count; j++) {
             var enemy = instance_create_layer(random(room_width), random(room_height), "Enemies", enemy_config.type);
             enemy.hp = enemy_config.hp;

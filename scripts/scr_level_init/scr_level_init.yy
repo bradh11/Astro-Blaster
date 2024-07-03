@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"scr_next_level",
+  "%Name":"scr_level_init",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_next_level",
+  "name":"scr_level_init",
   "parent":{
     "name":"Rooms",
     "path":"folders/Rooms.yy",
