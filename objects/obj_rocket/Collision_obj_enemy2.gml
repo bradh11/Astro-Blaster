@@ -7,7 +7,7 @@ if (!invincible && !rematerializing) {
 	audio_play_sound(snd_explosion, 1, false)
 
     // Create explosion effect
-    instance_create_layer(x, y, "Effects", oExplosion);
+    instance_create_layer(x, y, "Effects", obj_explosion);
 
     // Respawn at the starting position
     x = start_x;
@@ -31,4 +31,20 @@ if (!invincible && !rematerializing) {
 
     // Destroy the enemy
     instance_destroy(other);
+
+	// Check if all enemies are defeated
+    var all_enemies_defeated = true;
+    for (var i = 0; i < array_length(global.levels[global.current_level].enemies); i++) {
+        var enemy_type = global.levels[global.current_level].enemies[i].type;
+        if (instance_number(enemy_type) > 0) {
+            all_enemies_defeated = false;
+            break;
+        }
+    }
+
+    if (all_enemies_defeated) {
+        // Transition to the next level
+        scr_next_level();
+    }
+	
 }

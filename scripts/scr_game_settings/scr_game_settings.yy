@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_game_settings",
   "isCompatibility":false,
   "isDnD":false,

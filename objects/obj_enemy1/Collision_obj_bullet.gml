@@ -24,7 +24,7 @@ if (other.object_index == obj_bullet) {
         audio_play_sound(snd_explosion, 1, false);
         
         // Create explosion effect
-        instance_create_layer(x, y, "Effects", oExplosion);
+        instance_create_layer(x, y, "Effects", obj_explosion);
         
         // Destroy the instance
         instance_destroy();

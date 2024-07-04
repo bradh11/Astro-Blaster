@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_level_transitions",
   "isCompatibility":false,
   "isDnD":false,
