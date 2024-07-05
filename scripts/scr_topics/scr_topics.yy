@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_typing",
+  "%Name":"scr_topics",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_typing",
+  "name":"scr_topics",
   "parent":{
     "name":"DIalogue",
     "path":"folders/DIalogue.yy",

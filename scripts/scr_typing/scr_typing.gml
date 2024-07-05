@@ -15,7 +15,14 @@ function type_letter(x, y, text, progress, width) {
 	
 	for (var i = 1; i <= progress; i++) {
 		var char = string_char_at(text, i);
-	
+		
+        // Play typing sound only for new characters
+        if (other.use_typing_sound && i > other.last_typed_char && char != " ") {
+            var sound = other.typing_sounds[irandom(array_length(other.typing_sounds) - 1)];
+            audio_play_sound(sound, 5, false);
+            other.last_typed_char = i;
+        }
+		
 		// Handle normal line breaks
 		if (char == "\n") {
 			draw_x = 0;

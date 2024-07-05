@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_actions",
   "parent":{
-    "name":"Effects",
-    "path":"folders/Effects.yy",
+    "name":"DIalogue",
+    "path":"folders/DIalogue.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

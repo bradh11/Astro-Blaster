@@ -8,6 +8,7 @@ function initialize_globals() {
         // Initialize global variables
         global.lives = 3;
         global.score = 0;
+		global.input_context = "game";
 
         // Initialize the Weapon System
         show_debug_message("Calling scr_weapon_system...");
@@ -48,7 +49,10 @@ function screen_wrap(obj) {
 function check_global_keys() {
     // Check if 'R' key is pressed
     if (keyboard_check_pressed(ord("R"))) {
-        room_restart(); // Restart the current room
+        game_restart(); // Restart the current room
+		
+		// Call the initialize_globals function from scr_game_settings
+		initialize_globals();
     }
 
     // Check if 'ESC' key is pressed

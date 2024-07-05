@@ -14,7 +14,8 @@ function scr_define_levels() {
             {type: obj_enemy1, count: 0, hp: 10},
             {type: obj_enemy2, count: 0, hp: 15}
         ],
-        powerups: []
+        powerups: [],
+		dialogue: undefined
     };
 	
     var level1 = {
@@ -23,7 +24,8 @@ function scr_define_levels() {
             {type: obj_enemy1, count: 2, hp: 10},
             {type: obj_enemy2, count: 0, hp: 15}
         ],
-        powerups: [global.WEAPON_TYPE.SHOTGUN]
+        powerups: [global.WEAPON_TYPE.SHOTGUN],
+		dialogue: "Intro"
     };
 
     var level2 = {
@@ -32,7 +34,8 @@ function scr_define_levels() {
             {type: obj_enemy1, count: 5, hp: 20},
             {type: obj_enemy2, count: 1, hp: 25}
         ],
-        powerups: [global.WEAPON_TYPE.LASER]
+        powerups: [global.WEAPON_TYPE.LASER],
+		dialogue: undefined
     };
 	
     var level3 = {
@@ -41,7 +44,8 @@ function scr_define_levels() {
             {type: obj_enemy1, count: 8, hp: 30},
             {type: obj_enemy2, count: 1, hp: 35}
         ],
-        powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN]
+        powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN],
+		dialogue: undefined
     };
 	
 	var level4 = {
@@ -50,7 +54,8 @@ function scr_define_levels() {
             {type: obj_enemy1, count: 10, hp: 30},
             {type: obj_enemy2, count: 2, hp: 35}
         ],
-        powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN]
+        powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN],
+		dialogue: undefined
     };
 
 	var level5 = {
@@ -59,7 +64,8 @@ function scr_define_levels() {
             {type: obj_enemy1, count: 12, hp: 30},
             {type: obj_enemy2, count: 2, hp: 35}
         ],
-        powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN]
+        powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN],
+		dialogue: undefined
     };
 
 	var level6 = {
@@ -68,7 +74,8 @@ function scr_define_levels() {
             {type: obj_enemy1, count: 15, hp: 30},
             {type: obj_enemy2, count: 3, hp: 35}
         ],
-        powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN]
+        powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN],
+		dialogue: undefined
     };
 
 
@@ -79,7 +86,8 @@ function scr_define_levels() {
             {type: obj_enemy1, count: 0, hp: 30},
             {type: obj_enemy2, count: 0, hp: 35}
         ],
-        powerups: []
+        powerups: [],
+		dialogue: "Victory"
     };		
     // Add more levels as needed
     global.levels = [level0, level1, level2, level3, level4, level5, level6, levelvictory];

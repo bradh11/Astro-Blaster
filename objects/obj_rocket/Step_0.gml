@@ -29,10 +29,12 @@ if (keyboard_check_pressed(vk_shift)) {
 }
 
 // Shoot bullets using the current weapon's fire function
-if (keyboard_check_pressed(vk_space)) {
-    with (weapon) {
-        event_perform(ev_other, ev_user0); // Trigger Fire event
-    }
+if (global.input_context != "dialogue"){
+	if (keyboard_check_pressed(vk_space)) {
+	    with (weapon) {
+	        event_perform(ev_other, ev_user0); // Trigger Fire event
+	    }
+	}
 }
 
 #endregion

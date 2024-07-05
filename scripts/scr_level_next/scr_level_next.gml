@@ -26,7 +26,7 @@ function scr_next_level() {
         if (room_exists(next_level_config.room)) {
             show_debug_message("Transitioning to room: " + string(next_level_config.room));
             
-			TransitionStart(target_level, seq_fade_out, seq_fade_in);
+			TransitionStart(target_level, seq_fade_out, seq_fade_in, next_level_config.dialogue);
 			
 			
         } else {
