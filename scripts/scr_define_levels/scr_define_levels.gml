@@ -24,8 +24,8 @@ function scr_define_levels() {
             {type: obj_enemy1, count: 2, hp: 10},
             {type: obj_enemy2, count: 0, hp: 15}
         ],
-        powerups: [global.WEAPON_TYPE.SHOTGUN],
-		dialogue: "Intro"
+        powerups: [],
+		dialogue: "Level1"
     };
 
     var level2 = {
@@ -35,7 +35,7 @@ function scr_define_levels() {
             {type: obj_enemy2, count: 1, hp: 25}
         ],
         powerups: [global.WEAPON_TYPE.LASER],
-		dialogue: undefined
+		dialogue: "Level2"
     };
 	
     var level3 = {
