@@ -191,8 +191,8 @@
   "maintainGms1Font":false,
   "name":"fnt_name",
   "parent":{
-    "name":"DIalogue",
-    "path":"folders/DIalogue.yy",
+    "name":"Dialogue",
+    "path":"folders/Dialogue.yy",
   },
   "pointRounding":0,
   "ranges":[

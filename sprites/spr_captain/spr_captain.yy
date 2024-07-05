@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"DIalogue",
-    "path":"folders/DIalogue.yy",
+    "name":"Dialogue",
+    "path":"folders/Dialogue.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

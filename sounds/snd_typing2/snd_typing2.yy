@@ -12,8 +12,8 @@
   "duration":1.071,
   "name":"snd_typing2",
   "parent":{
-    "name":"DIalogue",
-    "path":"folders/DIalogue.yy",
+    "name":"Dialogue",
+    "path":"folders/Dialogue.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

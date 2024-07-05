@@ -8,8 +8,8 @@
   "name":"obj_hud",
   "overriddenProperties":[],
   "parent":{
-    "name":"Rooms",
-    "path":"folders/Rooms.yy",
+    "name":"Hud",
+    "path":"folders/Rooms/Hud.yy",
   },
   "parentObjectId":null,
   "persistent":false,

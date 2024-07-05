@@ -191,8 +191,8 @@
   "maintainGms1Font":false,
   "name":"fnt_hud",
   "parent":{
-    "name":"Rooms",
-    "path":"folders/Rooms.yy",
+    "name":"Hud",
+    "path":"folders/Rooms/Hud.yy",
   },
   "pointRounding":0,
   "ranges":[

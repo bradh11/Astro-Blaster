@@ -18,7 +18,7 @@ global.topics[$ "Victory"] = [
 	TEXT("That was close! Commander, are you there??!!"),
 	TEXT("Commander! I've defeated Nebulark, are you there???!"),
 	TEXT("Commander!!!!!!!!!???"),
-	SPEAKER("Nebulark", spr_nebulark, PORTRAIT_SIDE.RIGHT),
+	SPEAKER("Nebulark", spr_nebulark, PORTRAIT_SIDE.LEFT),
 	TEXT("There is no Commander, only Nebulark."),
 	TEXT("Muhahhhaaaahhhhhahahaha...   Muhaaahhhwhhhaaaahahahhhhhha...."),
 	

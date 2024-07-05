@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_typing",
   "parent":{
-    "name":"DIalogue",
-    "path":"folders/DIalogue.yy",
+    "name":"Dialogue",
+    "path":"folders/Dialogue.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
