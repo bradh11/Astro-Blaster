@@ -35,13 +35,13 @@ function scr_init_level() {
     // Spawn power-ups
     for (var i = 0; i < array_length(level_config.powerups); i++) {
         var powerup_type = level_config.powerups[i];
-        var powerup;
+        var weapon_powerup;
         switch (powerup_type) {
             case global.WEAPON_TYPE.SHOTGUN:
-                powerup = instance_create_layer(random(room_width), random(room_height), "PowerUps", obj_shotgun_powerup);
+                weapon_powerup = instance_create_layer(random(room_width), random(room_height), "PowerUps", obj_shotgun_powerup);
                 break;
             case global.WEAPON_TYPE.LASER:
-                powerup = instance_create_layer(random(room_width), random(room_height), "PowerUps", obj_laser_powerup);
+                weapon_powerup = instance_create_layer(random(room_width), random(room_height), "PowerUps", obj_laser_powerup);
                 break;
             // Add more cases for other power-ups
         }

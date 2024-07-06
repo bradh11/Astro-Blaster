@@ -6,7 +6,7 @@ function create_weapon_particle_effect(weapon_type, xx, yy) {
         cleanup_list: ds_list_create(),
         x: xx,
         y: yy,
-        lifetime: 300  // Duration of the effect in steps (4 seconds at 60 FPS)
+        lifetime: 600  // Max Duration of the effect in steps (4 seconds at 60 FPS)
     };
 
     switch(weapon_type) {
@@ -118,18 +118,19 @@ function create_laser_particle() {
     part_type_direction(spark, 0, 360, 0, 0);
     part_type_orientation(spark, 0, 360, 1, 0, true);
     part_type_blend(spark, true);
-    part_type_life(spark, 60, 300);
+    part_type_life(spark, 60, 500);
 
     var smoke = part_type_create();
-    part_type_shape(smoke, pt_shape_cloud);
-    part_type_size(smoke, 0.1, 0.3, 0.01, 0);
+    part_type_shape(smoke, pt_shape_smoke);
+    part_type_size(smoke, 0.05, 0.2, 0.005, 0);
     part_type_scale(smoke, 1, 1);
-    part_type_color3(smoke, c_dkgray, c_gray, c_ltgray);
-    part_type_alpha3(smoke, 0.2, 0.1, 0);
-    part_type_speed(smoke, 0.2, 0.5, -0.01, 0);
-    part_type_direction(smoke, 70, 110, 0, 1);
+    part_type_color_mix(smoke, c_dkgray, c_gray);
+    part_type_color_rgb(smoke, 150, 180, 150, 180, 150, 180);
+    part_type_alpha3(smoke, 0.7, 0.5, 0);
+    part_type_speed(smoke, 0.3, 1.2, -0.03, 0);
+    part_type_direction(smoke, 0, 360, 0, 1);
     part_type_orientation(smoke, 0, 360, 0.5, 0, true);
-    part_type_life(smoke, 30, 300);
+    part_type_life(smoke, 15, 120);
 
     return [ember, spark, smoke];
 }
