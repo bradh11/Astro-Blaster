@@ -9,7 +9,8 @@ global.WEAPON_TYPE = {
         bullet_speed: 6,
         weapon_sprite: spr_weapon_default,
         bullet_sprite: spr_bullet_default,
-        fire_sound: snd_fire_default
+        fire_sound: snd_fire_default,
+		particle_effect: create_default_particle
     },
     SHOTGUN: {
         name: "Shotgun",
@@ -19,17 +20,19 @@ global.WEAPON_TYPE = {
         bullet_speed: 8,
         weapon_sprite: spr_weapon_shotgun,
         bullet_sprite: spr_bullet_shotgun,
-        fire_sound: snd_fire_shotgun
+        fire_sound: snd_fire_shotgun,
+		particle_effect: create_shotgun_particle
     },
     LASER: {
         name: "Laser",
         cooldown: 45,
-        damage: 50,
+        damage: 35,
         range: 500,
         bullet_speed: 12,
         weapon_sprite: spr_weapon_laser,
         bullet_sprite: spr_bullet_laser,
-        fire_sound: snd_fire_laser
+        fire_sound: snd_fire_laser,
+		particle_effect: create_laser_particle
     }
 };
 
@@ -50,13 +53,14 @@ function get_weapon_position() {
     return {x: wx, y: wy};
 }
 
-function create_bullet(_x, _y, _direction, _speed, _sprite, _range, _damage) {
+function create_bullet(_x, _y, _direction, _speed, _sprite, _range, _damage, _weapon_type) {
     var bullet = instance_create_depth(_x, _y, 0, obj_bullet);
     bullet.direction = _direction;
     bullet.speed = _speed;
     bullet.sprite_index = _sprite;
     bullet.range = _range;
     bullet.damage = _damage;
+    bullet.weapon_type = _weapon_type;
     return bullet;
 }
 
@@ -65,20 +69,20 @@ function fire_weapon(weapon_type) {
     
     switch(weapon_type) {
         case global.WEAPON_TYPE.DEFAULT:
-            create_bullet(pos.x, pos.y, obj_rocket.image_angle, weapon_type.bullet_speed, weapon_type.bullet_sprite, weapon_type.range, weapon_type.damage);
+            create_bullet(pos.x, pos.y, obj_rocket.image_angle, weapon_type.bullet_speed, weapon_type.bullet_sprite, weapon_type.range, weapon_type.damage, weapon_type);
             audio_play_sound(weapon_type.fire_sound, 10, false);
             break;
         
         case global.WEAPON_TYPE.SHOTGUN:
             repeat(random_range(5, 7)) {
                 var bullet_direction = obj_rocket.image_angle + random_range(-15, 15);
-                create_bullet(pos.x, pos.y, bullet_direction, weapon_type.bullet_speed, weapon_type.bullet_sprite, weapon_type.range * 0.6, weapon_type.damage);
+                create_bullet(pos.x, pos.y, bullet_direction, weapon_type.bullet_speed, weapon_type.bullet_sprite, weapon_type.range * 0.6, weapon_type.damage, weapon_type);
             }
             audio_play_sound(weapon_type.fire_sound, 5, false);
             break;
         
         case global.WEAPON_TYPE.LASER:
-            var laser = create_bullet(pos.x, pos.y, obj_rocket.image_angle, weapon_type.bullet_speed, weapon_type.bullet_sprite, weapon_type.range, weapon_type.damage);
+            var laser = create_bullet(pos.x, pos.y, obj_rocket.image_angle, weapon_type.bullet_speed, weapon_type.bullet_sprite, weapon_type.range, weapon_type.damage, weapon_type);
             laser.image_xscale = 3;
             audio_play_sound(weapon_type.fire_sound, 5, false);
             break;

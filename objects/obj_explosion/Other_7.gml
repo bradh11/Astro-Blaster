@@ -1,4 +1,2 @@
-/// @description Animation end event
-
-// Destroy the explosion object when the animation ends
+/// Animation End Event
 instance_destroy();

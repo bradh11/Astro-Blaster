@@ -13,3 +13,6 @@ var min_rotation_speed = 0.1;
 var max_rotation_speed = 1;
 rotation_speed = irandom_range(min_rotation_speed, max_rotation_speed);
 
+// obj_enemy1 particle 
+particle_cleanup_list = ds_list_create();
+active_particle_effects = ds_list_create();

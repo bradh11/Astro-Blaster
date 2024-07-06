@@ -1,7 +1,6 @@
-// Collision Event with obj_bullet
+/// Collision Event with obj_bullet
 if (other.object_index == obj_bullet) {
-	
-	// Play explosion sound
+    // Play bullet hit sound
     audio_play_sound(snd_bullet_hit, 1, false);
 
     // Calculate the actual damage taken
@@ -9,11 +8,17 @@ if (other.object_index == obj_bullet) {
     
     // Reduce health by the actual damage taken
     hp -= damage_taken;
-	
+    
     // Increment the score by the actual damage taken
     global.score += damage_taken;
 
-    // Destroy the bullet
+	// Create particle effect based on the bullet's weapon type
+	var weapon_type = other.weapon_type;
+	if (weapon_type != undefined) {
+	    create_weapon_particle_effect(weapon_type, x, y);
+	}
+    
+	// Destroy the bullet
     with (other) {
         instance_destroy();
     }
@@ -28,7 +33,7 @@ if (other.object_index == obj_bullet) {
         
         // Destroy the instance
         instance_destroy();
-		
+        
         // Check if all enemies are defeated
         var all_enemies_defeated = true;
         for (var i = 0; i < array_length(global.levels[global.current_level].enemies); i++) {

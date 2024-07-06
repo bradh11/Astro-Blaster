@@ -1,5 +1,6 @@
 /// @description Enemy2 step event
 
+
 // Increment the time variable
 time += vertical_frequency;
 
