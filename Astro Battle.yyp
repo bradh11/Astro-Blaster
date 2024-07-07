@@ -58,6 +58,7 @@
     {"id":{"name":"fnt_title","path":"fonts/fnt_title/fnt_title.yy",},},
     {"id":{"name":"obj_alien_controller","path":"objects/obj_alien_controller/obj_alien_controller.yy",},},
     {"id":{"name":"obj_alien_med","path":"objects/obj_alien_med/obj_alien_med.yy",},},
+    {"id":{"name":"obj_asteroid_controller","path":"objects/obj_asteroid_controller/obj_asteroid_controller.yy",},},
     {"id":{"name":"obj_asteroid_med","path":"objects/obj_asteroid_med/obj_asteroid_med.yy",},},
     {"id":{"name":"obj_asteroid_sm","path":"objects/obj_asteroid_sm/obj_asteroid_sm.yy",},},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},},

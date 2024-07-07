@@ -1,17 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_asteroid_med",
+  "%Name":"obj_asteroid_controller",
   "eventList":[],
   "managed":true,
-  "name":"obj_asteroid_med",
+  "name":"obj_asteroid_controller",
   "overriddenProperties":[],
   "parent":{
     "name":"Enemies",
     "path":"folders/Enemies.yy",
   },
   "parentObjectId":{
-    "name":"obj_asteroid_controller",
-    "path":"objects/obj_asteroid_controller/obj_asteroid_controller.yy",
+    "name":"obj_enemy_controller",
+    "path":"objects/obj_enemy_controller/obj_enemy_controller.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_asteroid_med",
-    "path":"sprites/spr_asteroid_med/spr_asteroid_med.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

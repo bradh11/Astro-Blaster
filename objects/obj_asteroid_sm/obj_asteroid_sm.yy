@@ -10,8 +10,8 @@
     "path":"folders/Enemies.yy",
   },
   "parentObjectId":{
-    "name":"obj_enemy_controller",
-    "path":"objects/obj_enemy_controller/obj_enemy_controller.yy",
+    "name":"obj_asteroid_controller",
+    "path":"objects/obj_asteroid_controller/obj_asteroid_controller.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
