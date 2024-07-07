@@ -1,4 +1,8 @@
-/// @description Asteroid create event
+/// @description Enemy create event
+
+// set a default hp and max_hp
+hp = 10
+max_hp = hp
 
 // Set random speed (lower than rocket speed)
 var min_speed = 1;

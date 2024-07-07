@@ -1,4 +1,4 @@
-/// @description Asteroid step event
+/// @description Enemy step event
 
 // Rotate the asteroid slowly
 image_angle += rotation_speed;

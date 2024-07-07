@@ -18,7 +18,7 @@ global.topics[$ "Level2"] = [
 	TEXT("{{ Radio crackle }}"),
 	TEXT("Great work Captain!"),
 	TEXT("We've just learned that Nebulark's minions are dropping weapons all over the place."),
-	SPEAKER("Nebular Minions", spr_enemy2, PORTRAIT_SIDE.LEFT),
+	SPEAKER("Nebular Minions", spr_alien_med, PORTRAIT_SIDE.LEFT),
 	SPEAKER("Shotgun PowerUp", spr_shotgun_powerup, PORTRAIT_SIDE.RIGHT),
 	TEXT("Look for the power-ups that they've dropped and pick them up. We have added nanobots to the outer skin of your ship and they can lock on the new weapons for you to use."),
 	TEXT("Now go get em and kick some alien butt!"),

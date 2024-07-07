@@ -11,8 +11,8 @@ function scr_define_levels() {
 	var level0 = {
         room: rm_title, // Reference the room directly
         enemies: [
-            {type: obj_enemy1, count: 0, hp: 10},
-            {type: obj_enemy2, count: 0, hp: 15}
+            {type: obj_asteroid_med, count: 0, hp: 10},
+            {type: obj_alien_med, count: 0, hp: 15}
         ],
         powerups: [],
 		dialogue: undefined
@@ -21,8 +21,8 @@ function scr_define_levels() {
     var level1 = {
         room: rm_level1, // Reference the room directly
         enemies: [
-            {type: obj_enemy1, count: 2, hp: 10},
-            {type: obj_enemy2, count: 0, hp: 15}
+            {type: obj_asteroid_med, count: 2, hp: 10},
+            {type: obj_alien_med, count: 0, hp: 15}
         ],
         powerups: [],
 		dialogue: "Level1"
@@ -31,8 +31,9 @@ function scr_define_levels() {
     var level2 = {
         room: rm_level2, // Reference the room directly
         enemies: [
-            {type: obj_enemy1, count: 5, hp: 20},
-            {type: obj_enemy2, count: 1, hp: 25}
+            {type: obj_asteroid_med, count: 5, hp: 20},
+            {type: obj_alien_med, count: 1, hp: 25},
+			{type: obj_asteroid_sm, count: 2, hp: 20}
         ],
         powerups: [global.WEAPON_TYPE.SHOTGUN],
 		dialogue: "Level2"
@@ -41,8 +42,8 @@ function scr_define_levels() {
     var level3 = {
         room: rm_level3, // Reference the room directly
         enemies: [
-            {type: obj_enemy1, count: 8, hp: 30},
-            {type: obj_enemy2, count: 1, hp: 35}
+            {type: obj_asteroid_med, count: 8, hp: 30},
+            {type: obj_alien_med, count: 1, hp: 35}
         ],
         powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN],
 		dialogue: undefined
@@ -51,8 +52,8 @@ function scr_define_levels() {
 	var level4 = {
         room: rm_level4, // Reference the room directly
         enemies: [
-            {type: obj_enemy1, count: 10, hp: 35},
-            {type: obj_enemy2, count: 2, hp: 40}
+            {type: obj_asteroid_med, count: 10, hp: 35},
+            {type: obj_alien_med, count: 2, hp: 40}
         ],
         powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN],
 		dialogue: undefined
@@ -61,8 +62,8 @@ function scr_define_levels() {
 	var level5 = {
         room: rm_level5, // Reference the room directly
         enemies: [
-            {type: obj_enemy1, count: 12, hp: 35},
-            {type: obj_enemy2, count: 2, hp: 50}
+            {type: obj_asteroid_med, count: 12, hp: 35},
+            {type: obj_alien_med, count: 2, hp: 50}
         ],
         powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN],
 		dialogue: undefined
@@ -71,8 +72,8 @@ function scr_define_levels() {
 	var level6 = {
         room: rm_level6, // Reference the room directly
         enemies: [
-            {type: obj_enemy1, count: 15, hp: 40},
-            {type: obj_enemy2, count: 3, hp: 50}
+            {type: obj_asteroid_med, count: 15, hp: 40},
+            {type: obj_alien_med, count: 3, hp: 50}
         ],
         powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN],
 		dialogue: undefined
@@ -83,8 +84,8 @@ function scr_define_levels() {
 	var levelvictory = {
         room: rm_victory, // Reference the room directly
         enemies: [
-            {type: obj_enemy1, count: 0, hp: 30},
-            {type: obj_enemy2, count: 0, hp: 35}
+            {type: obj_asteroid_med, count: 0, hp: 30},
+            {type: obj_alien_med, count: 0, hp: 35}
         ],
         powerups: [],
 		dialogue: "Victory"
