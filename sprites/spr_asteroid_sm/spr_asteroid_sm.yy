@@ -44,8 +44,8 @@
   },
   "origin":9,
   "parent":{
-    "name":"Enemies",
-    "path":"folders/Enemies.yy",
+    "name":"Asteroids",
+    "path":"folders/Enemies/Asteroids.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

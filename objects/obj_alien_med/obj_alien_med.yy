@@ -6,8 +6,8 @@
   "name":"obj_alien_med",
   "overriddenProperties":[],
   "parent":{
-    "name":"Enemies",
-    "path":"folders/Enemies.yy",
+    "name":"Aliens",
+    "path":"folders/Enemies/Aliens.yy",
   },
   "parentObjectId":{
     "name":"obj_alien_controller",

@@ -6,8 +6,8 @@
   "name":"obj_asteroid_sm",
   "overriddenProperties":[],
   "parent":{
-    "name":"Enemies",
-    "path":"folders/Enemies.yy",
+    "name":"Asteroids",
+    "path":"folders/Enemies/Asteroids.yy",
   },
   "parentObjectId":{
     "name":"obj_asteroid_controller",

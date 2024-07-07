@@ -1,20 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_alien_controller",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_alien_lg",
+  "eventList":[],
   "managed":true,
-  "name":"obj_alien_controller",
+  "name":"obj_alien_lg",
   "overriddenProperties":[],
   "parent":{
     "name":"Aliens",
     "path":"folders/Enemies/Aliens.yy",
   },
   "parentObjectId":{
-    "name":"obj_enemy_controller",
-    "path":"objects/obj_enemy_controller/obj_enemy_controller.yy",
+    "name":"obj_alien_controller",
+    "path":"objects/obj_alien_controller/obj_alien_controller.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_alien_lg",
+    "path":"sprites/spr_alien_lg/spr_alien_lg.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
