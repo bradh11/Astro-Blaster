@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Alien Controller
 
 // Inherit the parent event
 event_inherited();
