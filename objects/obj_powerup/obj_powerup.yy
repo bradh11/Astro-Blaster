@@ -10,8 +10,8 @@
   "name":"obj_powerup",
   "overriddenProperties":[],
   "parent":{
-    "name":"PowerUps",
-    "path":"folders/Weapons/PowerUps.yy",
+    "name":"Weapons",
+    "path":"folders/Weapons.yy",
   },
   "parentObjectId":null,
   "persistent":false,

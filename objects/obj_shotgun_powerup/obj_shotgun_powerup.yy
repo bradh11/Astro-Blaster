@@ -8,8 +8,8 @@
   "name":"obj_shotgun_powerup",
   "overriddenProperties":[],
   "parent":{
-    "name":"PowerUps",
-    "path":"folders/Weapons/PowerUps.yy",
+    "name":"Shotgun",
+    "path":"folders/Weapons/Shotgun.yy",
   },
   "parentObjectId":{
     "name":"obj_powerup",

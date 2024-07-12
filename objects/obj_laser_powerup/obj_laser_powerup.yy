@@ -8,8 +8,8 @@
   "name":"obj_laser_powerup",
   "overriddenProperties":[],
   "parent":{
-    "name":"PowerUps",
-    "path":"folders/Weapons/PowerUps.yy",
+    "name":"Laser",
+    "path":"folders/Weapons/Laser.yy",
   },
   "parentObjectId":{
     "name":"obj_powerup",

@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"PowerUps",
-    "path":"folders/Weapons/PowerUps.yy",
+    "name":"Laser",
+    "path":"folders/Weapons/Laser.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
