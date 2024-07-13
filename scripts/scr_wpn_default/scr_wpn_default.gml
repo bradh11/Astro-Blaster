@@ -12,8 +12,13 @@ function create_default_weapon() {
         fire_sound: snd_wpn_default_fire,
         powerup_sprite: undefined,
         fire_function: function() {
+			var player = get_current_player();
+			if (player == noone) {
+			    show_debug_message("Error: No current player set");
+			    return;
+			}
             var pos = get_weapon_position();
-            create_bullet(pos.x, pos.y, obj_rocket.image_angle, self.bullet_speed, self.bullet_sprite, self.range, self.damage, self);
+            create_bullet(pos.x, pos.y, player.image_angle, self.bullet_speed, self.bullet_sprite, self.range, self.damage, self);
             audio_play_sound(self.fire_sound, 10, false);
         },
         particle_effect: function(x, y) {

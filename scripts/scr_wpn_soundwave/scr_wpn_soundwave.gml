@@ -13,10 +13,15 @@ function create_soundwave_weapon() {
         fire_sound: snd_wpn_soundwave_fire,
         powerup_sprite: spr_wpn_soundwave_powerup,
         fire_function: function() {
+			var player = get_current_player();
+			if (player == noone) {
+			    show_debug_message("Error: No current player set");
+			    return;
+			}
             var pos = get_weapon_position();
             var num_waves = 5;
             for (var i = -num_waves; i <= num_waves; i++) {
-                var wave_direction = obj_rocket.image_angle + i * 3;
+                var wave_direction = player.image_angle + i * 3;
                 create_bullet(pos.x, pos.y, wave_direction, self.bullet_speed, self.bullet_sprite, self.range, self.damage, self);
             }
             audio_play_sound(self.fire_sound, 8, false);

@@ -3,8 +3,8 @@
 set_current_player(id);
 
 weapon_offset = {
-    distance: sprite_width / 3,  // Distance from center of sprite
-    angle: 0  // Angle offset (0 means straight ahead)
+    distance: sprite_width / 15,  // Slightly closer to center for larger sprite
+    angle: 0
 };
 
 // Initial speed and position settings

@@ -14,9 +14,14 @@ function create_shotgun_weapon() {
         fire_sound: snd_wpn_shotgun_fire,
         powerup_sprite: spr_wpn_shotgun_powerup,
         fire_function: function() {
+			var player = get_current_player();
+			if (player == noone) {
+			    show_debug_message("Error: No current player set");
+			    return;
+			}
             var pos = get_weapon_position();
             repeat(random_range(5, 7)) {
-                var bullet_direction = obj_rocket.image_angle + random_range(-15, 15);
+                var bullet_direction = player.image_angle + random_range(-15, 15);
                 create_bullet(pos.x, pos.y, bullet_direction, self.bullet_speed, self.bullet_sprite, self.range * 0.6, self.damage, self);
             }
             audio_play_sound(self.fire_sound, 5, false);

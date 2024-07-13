@@ -12,8 +12,13 @@ function create_laser_weapon() {
         fire_sound: snd_wpn_laser_fire,
         powerup_sprite: spr_wpn_laser_powerup,
         fire_function: function() {
+			var player = get_current_player();
+			if (player == noone) {
+			    show_debug_message("Error: No current player set");
+			    return;
+			}
             var pos = get_weapon_position();
-            var laser = create_bullet(pos.x, pos.y, obj_rocket.image_angle, self.bullet_speed, self.bullet_sprite, self.range, self.damage, self);
+            var laser = create_bullet(pos.x, pos.y, player.image_angle, self.bullet_speed, self.bullet_sprite, self.range, self.damage, self);
             laser.image_xscale = 3;
             audio_play_sound(self.fire_sound, 5, false);
         },

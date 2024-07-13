@@ -37,10 +37,18 @@ function create_weapon_particle_effect(weapon_type, x, y) {
 }
 
 function get_weapon_position() {
-    var offset_distance_x = sprite_get_width(obj_rocket.sprite_index) / 4;
-    var offset_distance_y = sprite_get_height(obj_rocket.sprite_index) / 4;
-    var wx = obj_rocket.x + lengthdir_x(offset_distance_x, obj_rocket.image_angle);
-    var wy = obj_rocket.y + lengthdir_y(offset_distance_y, obj_rocket.image_angle);
+    var player = get_current_player();
+    if (player == noone) {
+        show_debug_message("Error: No current player set");
+        return {x: 0, y: 0};
+    }
+    
+    var offset = player.weapon_offset;
+    var angle = player.image_angle + offset.angle;
+    
+    var wx = player.x + lengthdir_x(offset.distance, angle);
+    var wy = player.y + lengthdir_y(offset.distance, angle);
+    
     return {x: wx, y: wy};
 }
 
@@ -55,8 +63,8 @@ function create_bullet(_x, _y, _direction, _speed, _sprite, _range, _damage, _we
     return bullet;
 }
 
-function add_weapon_to_inventory(weapon_type) {
-    with (obj_rocket) {
+function add_weapon_to_inventory(weapon_type, player_obj) {
+    with (player_obj) {
         if (!is_struct(weapon_type) || is_undefined(weapon_type.name)) {
             show_debug_message("Error: Invalid weapon type");
             return false;
@@ -92,12 +100,12 @@ function reset_weapon_inventory() {
     }
 }
 
-function cycle_weapon_type() {
-    with (obj_rocket) {
-        current_weapon_index = (current_weapon_index + 1) % array_length(weapon_inventory);
-        return weapon_inventory[current_weapon_index];
-    }
-}
+// function cycle_weapon_type(player_obj) {
+//     with (player_obj) {
+//         current_weapon_index = (current_weapon_index + 1) % array_length(weapon_inventory);
+//         return weapon_inventory[current_weapon_index];
+//     }
+// }
 
 function cleanup_particles() {
     var current_time_ms = get_timer() / 1000; // Get current time in milliseconds

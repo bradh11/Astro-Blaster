@@ -5,6 +5,8 @@ function initialize_globals() {
     if (!variable_global_exists("globals_initialized") || !global.globals_initialized) {
         show_debug_message("Initializing global variables...");
 
+		global.current_player = noone;
+
         // Initialize global variables
         global.lives = 3;
         global.score = 0;
@@ -46,6 +48,14 @@ function screen_wrap(obj) {
     }
 }
 
+function set_current_player(player_object) {
+	global.current_player = player_object;
+}
+
+function get_current_player() {
+	return global.current_player;
+}
+		
 function check_global_keys() {
     // Check if 'R' key is pressed
     if (keyboard_check_pressed(ord("R"))) {
