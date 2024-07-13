@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_wpn_laser",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_wpn_laser",
+  "parent":{
+    "name":"Laser",
+    "path":"folders/Weapons/Laser.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

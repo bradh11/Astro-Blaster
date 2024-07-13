@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_wpn_soundwave",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_wpn_soundwave",
+  "parent":{
+    "name":"Soundwave",
+    "path":"folders/Weapons/Soundwave.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
