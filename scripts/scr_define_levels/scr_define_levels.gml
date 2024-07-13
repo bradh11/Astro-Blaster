@@ -24,7 +24,7 @@ function scr_define_levels() {
             {type: obj_asteroid_med, count: 2, hp: 10},
             {type: obj_alien_med, count: 0, hp: 15}
         ],
-        powerups: [],
+        powerups: [global.WEAPON_TYPE.SOUNDWAVE],
 		dialogue: "Level1"
     };
 
@@ -69,7 +69,7 @@ function scr_define_levels() {
             {type: obj_asteroid_med, count: 12, hp: 35},
             {type: obj_alien_med, count: 2, hp: 50}
         ],
-        powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN],
+        powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN, global.WEAPON_TYPE.SOUNDWAVE],
 		dialogue: undefined
     };
 
@@ -81,7 +81,7 @@ function scr_define_levels() {
             {type: obj_alien_med, count: 3, hp: 50},
             {type: obj_alien_sm, count: 2, hp: 10}
         ],
-        powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN],
+        powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN, global.WEAPON_TYPE.SOUNDWAVE],
 		dialogue: undefined
     };
 
@@ -94,7 +94,7 @@ function scr_define_levels() {
 			{type: obj_alien_lg, count: 2, hp: 250},
             {type: obj_alien_sm, count: 2, hp: 10}
         ],
-        powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN],
+        powerups: [global.WEAPON_TYPE.LASER, global.WEAPON_TYPE.SHOTGUN, global.WEAPON_TYPE.SOUNDWAVE],
 		dialogue: undefined
     };
 	
