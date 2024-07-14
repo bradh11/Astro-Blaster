@@ -1,7 +1,4 @@
 /// description: Shotgun weapon definition
-
-
-
 function create_shotgun_weapon() {
     return {
         name: "Shotgun",
@@ -14,11 +11,11 @@ function create_shotgun_weapon() {
         fire_sound: snd_wpn_shotgun_fire,
         powerup_sprite: spr_wpn_shotgun_powerup,
         fire_function: function() {
-			var player = get_current_player();
-			if (player == noone) {
-			    show_debug_message("Error: No current player set");
-			    return;
-			}
+            var player = get_current_player();
+            if (player == noone) {
+                show_debug_message("Error: No current player set");
+                return;
+            }
             var pos = get_weapon_position();
             repeat(random_range(5, 7)) {
                 var bullet_direction = player.image_angle + random_range(-15, 15);
@@ -27,19 +24,37 @@ function create_shotgun_weapon() {
             audio_play_sound(self.fire_sound, 5, false);
         },
         particle_effect: function(x, y) {
+            if (!part_system_exists(global.particle_system)) {
+                show_debug_message("Error: Particle system does not exist. Creating new system.");
+                global.particle_system = part_system_create();
+            }
+
             var part = create_shotgun_particle();
             
+            if (!variable_global_exists("emitter") || !part_emitter_exists(global.particle_system, global.emitter)) {
+                global.emitter = part_emitter_create(global.particle_system);
+            }
+
             part_emitter_region(global.particle_system, global.emitter, 
                                 x - 8, x + 8, 
                                 y - 8, y + 8, 
                                 ps_shape_ellipse, ps_distr_gaussian);
             part_emitter_burst(global.particle_system, global.emitter, part, 25);
             
-			ds_list_add(global.active_effects, {
-			    part_type: part,
-			    lifetime: 120,
-			    creation_time: get_timer() / 1000
-			});
+            if (!variable_global_exists("active_effects")) {
+                global.active_effects = ds_list_create();
+            }
+
+            if (ds_exists(global.active_effects, ds_type_list)) {
+                ds_list_add(global.active_effects, {
+                    part_type: part,
+                    lifetime: 120,
+                    creation_time: get_timer() / 1000
+                });
+            } else {
+                show_debug_message("Error: Cannot add to global.active_effects, it is not a valid ds_list");
+                part_type_destroy(part);
+            }
         }
     };
 }

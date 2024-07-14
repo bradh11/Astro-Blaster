@@ -16,16 +16,19 @@ if (global.input_context != "dialogue") {
 
             if (key_select) {
                 switch (selected_option) {
-                    case 0: // Start Game
-                        audio_stop_sound(snd_intro_music);
-                        show_debug_message("Initializing first level...");
-                        global.current_level = 0;
-                        show_debug_message("First level initialized");
-                        scr_next_level();
-                        break;
+					case 0: // Start Game
+					    audio_stop_sound(snd_intro_music);
+					    show_debug_message("Initializing first level...");
+					    global.current_level = 0;
+					    show_debug_message("First level initialized");
+					    scr_next_level();
+					    break;
                     case 1: // Select Player
                         menu_state = MENU_STATE.PLAYER_SELECT;
                         selected_option = selected_player;
+                        break;
+                    case 2: // Quit Game
+                        game_end();
                         break;
                 }
             }

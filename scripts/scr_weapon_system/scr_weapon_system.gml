@@ -33,6 +33,16 @@ function fire_weapon(weapon_type) {
 }
 
 function create_weapon_particle_effect(weapon_type, x, y) {
+    if (!part_system_exists(global.particle_system)) {
+        show_debug_message("Error: Particle system does not exist. Creating new system.");
+        global.particle_system = part_system_create();
+    }
+
+    if (!ds_exists(global.active_effects, ds_type_list)) {
+        show_debug_message("Error: global.active_effects is not a valid ds_list. Recreating.");
+        global.active_effects = ds_list_create();
+    }
+
     weapon_type.particle_effect(x, y);
 }
 

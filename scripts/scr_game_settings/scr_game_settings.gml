@@ -26,6 +26,8 @@ function initialize_globals() {
         global.current_level = 0;
         show_debug_message("Current level set to: " + string(global.current_level));
 
+		global.active_effects = ds_list_create();
+
         // Mark globals as initialized
         global.globals_initialized = true;
 
@@ -67,7 +69,14 @@ function check_global_keys() {
 
     // Check if 'ESC' key is pressed
     if (keyboard_check_pressed(vk_escape)) {
-        game_end(); // Exit the game
+		// Reset game state
+        global.input_context = "menu";
+        with (obj_title_screen) {
+            menu_state = MENU_STATE.MAIN;
+            selected_option = 0;
+        }
+		
+        room_goto(rm_title);
     }
 }
 

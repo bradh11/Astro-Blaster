@@ -1,10 +1,3 @@
-/// @description Title Screen create event
-depth = 0; // Set to a higher value to ensure it is created after obj_global_controller
-
-
-// Play intro audio
-audio_play_sound(snd_intro_music, 1, true); // Set loop to true if you want it to loop
-
 /// Create Event of obj_title_screen
 
 enum MENU_STATE {
@@ -13,13 +6,16 @@ enum MENU_STATE {
 }
 
 menu_state = MENU_STATE.MAIN;
-menu_options = ["Start Game", "Select Player"];
+menu_options = ["Start Game", "Select Player", "Quit Game"];
 selected_option = 0;
 
 player_options = ["Rocket 1", "Rocket 2"];
-player_scales = [1, 0.2];  // Corresponding scales for each player object
+player_scales = [1, 0.2];
 selected_player = 0;
 
-// Initialize the selected player object and scale
 global.selected_player_object = obj_rocket;
 global.selected_player_scale = 1;
+
+if (!audio_is_playing(snd_intro_music)) {
+    audio_play_sound(snd_intro_music, 10, true);
+}
